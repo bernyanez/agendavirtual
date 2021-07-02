@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-        <title>Laravel</title>
+        <title>Buscar Servicio</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -31,7 +31,9 @@
                         @else
                             <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Iniciar sesión</a>
                         @endauth
-                        
+                        @if (Route::has('register'))
+                        <a href="{{ route('register') }}" class="text-sm text-gray-700 underline">Resgitrarse</a>                       
+                        @endif
                     </div>
                  @endif  
 
@@ -41,12 +43,10 @@
                     <p>Agenda servicios de profesionales u ofrece tus servicios a millones de personas</p>
                 </div>
                 <div>   
-                    
-                    <a href="" button class="btn btn-primary" type="submit"> Busca un servicio </a></button>
-                   
-                    @if(Route::has('register'))
+                    <a href="buscaservicios.html" button class="btn btn-primary" type="submit"> Busca un servicio </a></button>
+                    @if (Route::has('register'))
                     <a href="{{ route('register') }}"button class="btn btn-primary" >Ofrece tus servicios   </a> </button>                
-                             
+                                
                     @endif
                 </div>     
                
