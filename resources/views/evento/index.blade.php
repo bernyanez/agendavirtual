@@ -44,8 +44,8 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="star">star</label>
-                  <input type="text" class="form-control" name="star" id="star" aria-describedby="helpId" placeholder="">
+                  <label for="start">start</label>
+                  <input type="text" class="form-control" name="start" id="start" aria-describedby="helpId" placeholder="">
                   <small id="helpId" class="form-text text-muted">Help text</small>
                 </div>
 

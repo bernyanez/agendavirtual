@@ -18,7 +18,8 @@ class CreateEventosTable extends Migration
 
             $table->string("title",100);
             $table->text("descripcion");
-            $table->dateTime("star");
+            
+            $table->dateTime("start");
             $table->dateTime("end");
 
             $table->timestamps();

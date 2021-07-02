@@ -18,6 +18,8 @@
 
           },
 
+          events: "http://localhost:8888/agenda/public/evento/mostrar" ,
+
           dateClick:function(info){
               $("#evento").modal("show");
           }
@@ -31,8 +33,7 @@
             console.log(datos);
 
 
-            axios.post("http://localhost:8888/agenda/public/evento/agregar", datos).
-            then(
+            axios.post("http://localhost:8888/agenda/public/evento/agregar", datos).then(
                 (respuesta) =>{
                     $("#evento").modal("hide");
                 }
