@@ -21,6 +21,11 @@
           events: "http://localhost:8888/agenda/public/evento/mostrar" ,
 
           dateClick:function(info){
+              formulario.reset();
+
+              formulario.start.value=info.dateStr;
+              formulario.end.value=info.dateStr;
+
               $("#evento").modal("show");
           }
 
@@ -35,6 +40,8 @@
 
             axios.post("http://localhost:8888/agenda/public/evento/agregar", datos).then(
                 (respuesta) =>{
+
+                    calendar.refetchEvents();
                     $("#evento").modal("hide");
                 }
             ).catch(
