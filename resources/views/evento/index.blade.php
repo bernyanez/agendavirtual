@@ -22,7 +22,7 @@
                     </button>
             </div>
             <div class="modal-body">
-                <form action="">
+                <form action="" id= "formularioEventos">
 
                 {{ csrf_field() }}
 
@@ -45,13 +45,13 @@
 
                 <div class="form-group">
                   <label for="start">start</label>
-                  <input type="text" class="form-control" name="start" id="start" aria-describedby="helpId" placeholder="">
+                  <input type="date" class="form-control" name="start" id="start" aria-describedby="helpId" placeholder="">
                   <small id="helpId" class="form-text text-muted">Help text</small>
                 </div>
 
                 <div class="form-group">
                   <label for="end">end</label>
-                  <input type="text" class="form-control" name="end" id="end" aria-describedby="helpId" placeholder="">
+                  <input type="date" class="form-control" name="end" id="end" aria-describedby="helpId" placeholder="">
                   <small id="helpId" class="form-text text-muted">Help text</small>
                 </div>
 
