@@ -8,7 +8,9 @@
         var calendarEl = document.getElementById('agenda');
         var calendar = new FullCalendar.Calendar(calendarEl, {
           initialView: 'dayGridMonth',
-          selectable:true,
+          selectable: true,
+          businessHours: true,
+
           
           locale:"es",
           displayEventTime:false,
@@ -16,11 +18,14 @@
           headerToolbar: {
               left: 'prev,next today',
               center:'title',
-              right:'dayGridMonth,timeGridWeek,listWeek'
-
+              right:'dayGridMonth,timeGridWeek,listWeek',
           },
+          
 
-          events: "http://localhost:8888/agenda/public/evento/mostrar" ,
+
+          events: "http://localhost:8888/agenda/public/home/mostrar" ,
+         
+
 
           dateClick:function(info){
               formulario.reset();
@@ -31,11 +36,22 @@
               $("#evento").modal("show"); //muestra el modal en la pagina evento
           },
 
+       
+          select: function(info) {
+                //alert("selected " + info.startStr + " to " + info.endStr);
+                $('#txtFechaInicio').val(info.startStr);
+                $('#txtFechaFinal').val(info.endStr);
+                $('#exampleModal').modal();
+                },
+
+                
+                
+
           eventClick: function (info) {
               var evento = info.event;
               console.log(evento)
 
-              axios.post("http://localhost:8888/agenda/public/evento/editar/"+info.event.id).then(
+              axios.post("http://localhost:8888/agenda/public/home/editar/"+info.event.id).then(
                 (respuesta) =>{
 //recupero desde la db los datos y los inserta en el modal-- en el eventocontroler busca en el edit por el dato id
                     formulario.id.value= respuesta.data.id; 
@@ -43,6 +59,7 @@
                     formulario.descripcion.value= respuesta.data.descripcion; 
                     formulario.start.value= respuesta.data.start; 
                     formulario.end.value= respuesta.data.end; 
+                    formulario.id_users.value= respuesta.data.id_users; 
 
                     $("#evento").modal("show");//muestra el modal
                 }
@@ -58,11 +75,13 @@
 
           select:function (info) {
 
-            formulario.start.value=info.startStr;
-            formulario.end.value=info.endStr;
-            $("#home").modal("show");  
+            formularioEventos.start.value=info.startStr;
+            formularioEventos.end.value=info.endStr;
+            $("#evento").modal("show");  
             
-          }
+          },
+
+          
 
 
         });
@@ -70,19 +89,19 @@
 
         document.getElementById("btnGuardar").addEventListener("click",function(){
             
-            enviarDatos("http://localhost:8888/agenda/public/evento/agregar");
+            enviarDatos("http://localhost:8888/agenda/public/home/agregar");
 
         });
 
         document.getElementById("btnEliminar").addEventListener("click",function(){
             
-            enviarDatos("http://localhost:8888/agenda/public/evento/borrar/"+formulario.id.value);
+            enviarDatos("http://localhost:8888/agenda/public/home/borrar/"+formulario.id.value);
 
         });
 
         document.getElementById("btnModificar").addEventListener("click",function(){
             
-            enviarDatos("http://localhost:8888/agenda/public/evento/actualizar/"+formulario.id.value);
+            enviarDatos("http://localhost:8888/agenda/public/home/actualizar/"+formulario.id.value);
 
         });
 

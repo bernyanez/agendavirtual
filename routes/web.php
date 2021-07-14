@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\BuscaServicioController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,28 +21,28 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/evento', [App\Http\Controllers\EventoController::class, 'index']);
+Route::get('/home', [App\Http\Controllers\EventoController::class, 'index']);
 
-Route::get('/evento/mostrar', [App\Http\Controllers\EventoController::class, 'show']);
+Route::get('/home/mostrar', [App\Http\Controllers\EventoController::class, 'show']);
 
-Route::post('/evento/agregar', [App\Http\Controllers\EventoController::class, 'store']);
+Route::post('/home/agregar', [App\Http\Controllers\EventoController::class, 'store']);
 
-Route::post('/evento/editar/{id}', [App\Http\Controllers\EventoController::class, 'edit']);
+Route::post('/home/editar/{id}', [App\Http\Controllers\EventoController::class, 'edit']);
 
-Route::post('/evento/actualizar/{evento}', [App\Http\Controllers\EventoController::class, 'update']);
+Route::post('/home/actualizar/{evento}', [App\Http\Controllers\EventoController::class, 'update']);
 
-Route::post('/evento/borrar/{id}', [App\Http\Controllers\EventoController::class, 'destroy']);
+Route::post('/home/borrar/{id}', [App\Http\Controllers\EventoController::class, 'destroy']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/user/index', [App\Http\Controllers\BuscaServicioController::class, 'index']);
 
+Route::get('/calendarioprofesional', [App\Http\Controllers\EventoController::class, 'calendarioprofesional']);
 
 Route::get('quienessomos', function(){
     return view('quienessomos');
 });
 
-Route::get('buscaservicio', function(){
-    return view('buscaservicio');
-});
+
 
 

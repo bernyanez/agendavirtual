@@ -13,7 +13,8 @@ class Evento extends Model
         'descripcion'=>'required',
         'start'=>'required',
         'end'=>'required',
+        'id_users'=>'required',
     ];
 
-    protected $fillable=['title','descripcion','start','end'];
+    protected $fillable=['title','descripcion','start','end', 'id_users'];
 }

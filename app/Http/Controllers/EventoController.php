@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Evento;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class EventoController extends Controller
 {
@@ -38,6 +40,7 @@ class EventoController extends Controller
     public function store(Request $request)
     {
         //
+        
         request()->validate(Evento::$rules); //validando info
         $evento=Evento::create($request->all()); //ORM que crea con todos los datos
     }
@@ -51,8 +54,22 @@ class EventoController extends Controller
     public function show(Evento $evento)
     {
         //
-        $evento= Evento::all();
+        $userId=Auth::id();
+        $evento= Evento::where('id_users',$userId)->get();
         return response()->json($evento);
+    
+    }
+
+
+    public function calendarioprofesional(Request $request, Evento $evento)
+    {
+        
+        $id_users=$request->get('id');
+        $evento= Evento::where('id_users',"3")->get();
+
+        //return view('calendarioprofesional', compact('evento'));
+        return response()->json($evento);
+    
     }
 
     /**

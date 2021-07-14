@@ -23,6 +23,8 @@ class CreateEventosTable extends Migration
             $table->dateTime("end");
 
             $table->timestamps();
+            $table->unsignedBigInteger("id_users");
+            $table->foreign("id_users")->references("id")->on("users");
         });
     }
 
