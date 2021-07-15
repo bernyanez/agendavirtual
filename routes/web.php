@@ -35,6 +35,9 @@ Route::post('/home/borrar/{id}', [App\Http\Controllers\EventoController::class, 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/home/{user}/editar', [App\Http\Controllers\HomeController::class, 'editar'])->name('home.editar');;
+Route::put('/home/{user}', [App\Http\Controllers\HomeController::class, 'update'])->name('home.update');;
+
 Route::get('/user/index', [App\Http\Controllers\BuscaServicioController::class, 'index']);
 
 Route::get('/calendarioprofesional', [App\Http\Controllers\EventoController::class, 'calendarioprofesional']);

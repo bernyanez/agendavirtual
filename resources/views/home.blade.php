@@ -15,7 +15,35 @@
                     @endif
                     {{ __('Bienvenido!') }}
                     <div class="container">
-                        <div id="agenda">    
+                    
+                    <form action="" method="get">
+                    <div class="text-center">               
+                    <div class="row" >
+                        <table class="table table-striped">
+                        <tbody> 
+                            <div class="card my-1 m-1" style="width: 18rem;">
+                                <div class="card-body my-1">
+                                    <h5 class="card-title">{{ auth()->user()->name }}</h5>                               
+                                    <h6 class="card-title">{{ auth()->user()->descripcion }}</h6>
+                                    <h6 class="card-title">{{ auth()->user()->servicio }}</h6>
+                                    <h6 class="card-subtitle mb-2 text-muted">{{ auth()->user()->telefono }}</h6>
+                                    <h6 class="card-subtitle mb-2 text-muted">{{ auth()->user()->direccion }}</h6>
+                                    <h6 class="card-subtitle mb-2 text-muted">{{ auth()->user()->email }}</h6>
+
+                                  
+                                    <h6 class="card-subtitle mb-2 text-muted" hidden="true" name="id"> {{ auth()->user()->id }}</h6>
+                                    <?php $id_users = Auth::id(); ?>
+                                    <a  href="{{route('home.editar', $id_users )}}" class="card-link">Editar datos</a>
+                                </div>
+                            </div>
+                        </tbody>
+                        </table>
+                        </div>    
+                    </div>   
+                    </form>
+                    </div> 
+
+                    <div id="agenda">    
                         </div>
                     </div>
                 </div>
@@ -87,4 +115,6 @@
         </div>
     </div>
 </div>
+
+
 @endsection
