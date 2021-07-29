@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Evento;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
+
 
 class EventoController extends Controller
 {
@@ -24,9 +26,9 @@ class EventoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -37,8 +39,9 @@ class EventoController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        request()->validate(Evento::$rules); //validando info
+        $id_users = Auth::id();
+        $id_cliente = Auth::id();
+        request()->validate(Evento::$rules); //validando info        
         $evento=Evento::create($request->all()); //ORM que crea con todos los datos
     }
 
@@ -48,12 +51,17 @@ class EventoController extends Controller
      * @param  \App\Models\Evento  $evento
      * @return \Illuminate\Http\Response
      */
+
+
     public function show(Evento $evento)
-    {
-        //
-        $evento= Evento::all();
+    {      
+        $userId= Auth::id();              
+        $evento= Evento::where('id_users',$userId)->get();
         return response()->json($evento);
     }
+
+
+   
 
     /**
      * Show the form for editing the specified resource.
@@ -64,6 +72,7 @@ class EventoController extends Controller
     public function edit($id)
     {
         //
+        
         $evento= Evento::find($id);
         $evento->start = Carbon::createFromFormat('Y-m-d H:i:s', $evento->start)->format('Y-m-d');//doy nuevo formato al campo date
         $evento->end = Carbon::createFromFormat('Y-m-d H:i:s', $evento->end)->format('Y-m-d');
@@ -100,4 +109,10 @@ class EventoController extends Controller
         return response()->json($evento);
     
     }
+
+    // public function id_users(){
+    //     $id_users =Auth::id(); 
+    //     return view('home ', compact('id_users'));  
+
+    // }
 }

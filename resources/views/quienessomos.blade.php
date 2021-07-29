@@ -48,7 +48,10 @@
                 </div>
                 <div>   
                     @if (Route::has('register'))
-                    <a href="{{ route('register') }}"button class="btn btn-primary" >Registrate ahora</a> </button>                          
+                    <a href="{{ route('register') }}"button class="btn btn-primary" >Registro para profesionales</a> </button>
+                    @endif
+                    @if (Route::has('registerCliente'))   
+                    <a href="{{ route('registerCliente') }}"button class="btn btn-primary" >Registrate para clientes</a> </button>                      
                     @endif
                 </div>     
                

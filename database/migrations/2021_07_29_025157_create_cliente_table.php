@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEventosTable extends Migration
+class CreateClienteTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreateEventosTable extends Migration
      */
     public function up()
     {
-        Schema::create('eventos', function (Blueprint $table) {
+        Schema::create('cliente', function (Blueprint $table) {
             $table->id();
-
-            $table->string("title",100);
-            $table->text("descripcion");
-            
-            $table->dateTime("start");
-            $table->dateTime("end");
-
+            $table->string('name');
+            $table->string('direccion');
+            $table->string('password');
+            $table->string('email');
+            $table->integer('telefono');
             $table->timestamps();
         });
     }
@@ -33,6 +31,6 @@ class CreateEventosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('eventos');
+        Schema::dropIfExists('cliente');
     }
 }

@@ -42,7 +42,7 @@
                 </div>
                 <div>   
                     
-                    <a href="" button class="btn btn-primary" type="submit"> Busca un servicio </a></button>
+                    <a href="{{ url('user/index') }}" button class="btn btn-primary" type="submit"> Busca un servicio </a></button>
                    
                     @if(Route::has('register'))
                     <a href="{{ route('register') }}"button class="btn btn-primary" >Ofrece tus servicios   </a> </button>                
