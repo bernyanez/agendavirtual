@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\BuscaServicioController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +27,11 @@ Route::GET('/auth/registerCliente', [App\Http\Controllers\Auth\RegisterControlle
 
 Auth::routes();
 
+<<<<<<< HEAD
 //Route::resource('evento',[App\Http\Controllers\EventoProfesionalController::class], '');
 
+=======
+>>>>>>> d48b96de8411e49d8584f65bef6cf4e144c300a1
 Route::get('/home', [App\Http\Controllers\EventoController::class, 'index']);
 
 Route::get('/home/mostrar', [App\Http\Controllers\EventoController::class, 'show']);
@@ -41,6 +46,7 @@ Route::post('/home/borrar/{id}', [App\Http\Controllers\EventoController::class, 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+<<<<<<< HEAD
 Route::get('/user/index', [App\Http\Controllers\BuscaServicioController::class, 'index']);
 
 Route::get('evento/calendarioprofesional', [App\Http\Controllers\EventoProfesionalController::class, 'index']);
@@ -52,8 +58,19 @@ Route::put('home/{user}', [App\Http\Controllers\HomeController::class,'update'])
 
 
 
+=======
+Route::get('/home/{user}/editar', [App\Http\Controllers\HomeController::class, 'editar'])->name('home.editar');;
+Route::put('/home/{user}', [App\Http\Controllers\HomeController::class, 'update'])->name('home.update');;
+>>>>>>> d48b96de8411e49d8584f65bef6cf4e144c300a1
+
+Route::get('/user/index', [App\Http\Controllers\BuscaServicioController::class, 'index']);
+
+Route::get('/calendarioprofesional', [App\Http\Controllers\EventoController::class, 'calendarioprofesional']);
 
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> d48b96de8411e49d8584f65bef6cf4e144c300a1
 
 

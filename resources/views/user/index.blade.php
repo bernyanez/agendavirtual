@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+=======
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+>>>>>>> d48b96de8411e49d8584f65bef6cf4e144c300a1
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
@@ -30,7 +39,11 @@
             <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Iniciar sesión</a>
             @endauth
             @if (Route::has('register'))
+<<<<<<< HEAD
             <a href="{{ route('register') }}" class="text-sm text-gray-700 underline">Registrarse</a>                       
+=======
+            <a href="{{ route('register') }}" class="text-sm text-gray-700 underline">Resgitrarse</a>                       
+>>>>>>> d48b96de8411e49d8584f65bef6cf4e144c300a1
             @endif
         </div>
     @endif  
@@ -59,11 +72,19 @@
                         @foreach ($user as $user)
                             <div class="card my-1 m-1" style="width: 18rem;">
                                 <div class="card-body my-1">
+<<<<<<< HEAD
                                     <h5 class="card-title"  name="id_usuario">{{ $user->id }}</h5>
                                     <h5 class="card-title">{{ $user->name }}</h5>
                                     <h6 class="card-subtitle mb-2 text-muted">{{ $user->servicio }}</h6>
                                     <p class="card-text" >{{ $user->descripcion }}</p>
                                     <a href="{{url('evento/calendarioprofesional')}}" class="card-link">Ver agenda</a>
+=======
+                                    <h5 class="card-title" hidden="true" name="id_users">{{ $user->id }}</h5>
+                                    <h5 class="card-title">{{ $user->name }}</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">{{ $user->servicio }}</h6>
+                                    <p class="card-text" >{{ $user->descripcion }}</p>
+                                    <a href="{{url('/calendarioprofesional')}}" class="card-link">Ver agenda</a>
+>>>>>>> d48b96de8411e49d8584f65bef6cf4e144c300a1
                                 </div>
                             </div>
                         @endforeach

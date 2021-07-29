@@ -25,9 +25,13 @@ class CreateUsersTable extends Migration
             $table->string('descripcion');
             $table->string('telefono');
             $table->timestamps();
+<<<<<<< HEAD
             $table->string('rol');
 
             // telefono, servicio, direccion, descripcion.
+=======
+           
+>>>>>>> d48b96de8411e49d8584f65bef6cf4e144c300a1
         });
     }
 

@@ -2,20 +2,11 @@
 @section('content')
 
 <div class="container">
-<<<<<<< HEAD:resources/views/evento/calendarioprofesional.blade.php
 
-    <div id="agendaprofe">
-      
-     </div>
-</div>
-
-=======
     <div id="agenda">
      </div>
 </div>
 
-<!-- Modal -->
->>>>>>> d48b96de8411e49d8584f65bef6cf4e144c300a1:resources/views/evento/index.blade.php
 <div class="modal fade" id="evento" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -32,7 +23,7 @@
 
                 <div class="form-group" hidden="true">
                   <label for="id">id</label>
-                  <input type="text" class="form-control" name="id_usuario" id="id_usuario" aria-describedby="helpId" placeholder="">
+                  <input type="text" class="form-control" name="id" id="id" aria-describedby="helpId" placeholder="">
                   <small id="helpId" class="form-text text-muted">Help text</small>
                 </div>
 
@@ -61,13 +52,7 @@
                 </div>
 
                 <div class="form-group">
-<<<<<<< HEAD:resources/views/evento/calendarioprofesional.blade.php
-                  <input type="text" class="form-control" name="id_users" id="id_users" value="" aria-describedby="helpId" placeholder="" hidden="true">
-=======
-                  <label for="id_users">id_users</label>
-                  <input type="text" class="form-control" name="id_users" id="id_users" value="{{'$id_users'}}" aria-describedby="helpId" placeholder="" >
-                  <small id="helpId" class="form-text text-muted">Help text</small>
->>>>>>> d48b96de8411e49d8584f65bef6cf4e144c300a1:resources/views/evento/index.blade.php
+                  <input type="text" class="form-control" name="id_users" id="id_users"  aria-describedby="helpId" placeholder="" hidden="true">
                 </div>
 
 
@@ -83,6 +68,4 @@
         </div>
     </div>
 </div>
-
-<script src="{{ asset('js/agendaprofe.js') }}" defer></script>
 @endsection

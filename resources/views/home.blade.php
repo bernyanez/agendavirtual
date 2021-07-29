@@ -13,9 +13,13 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
                     {{ __('Bienvenido!') }}
+<<<<<<< HEAD
                 <div class="container">
+=======
+                    <div class="container">
+                    
+>>>>>>> d48b96de8411e49d8584f65bef6cf4e144c300a1
                     <form action="" method="get">
                     <div class="text-center">               
                     <div class="row" >
@@ -30,7 +34,11 @@
                                     <h6 class="card-subtitle mb-2 text-muted">{{ auth()->user()->direccion }}</h6>
                                     <h6 class="card-subtitle mb-2 text-muted">{{ auth()->user()->email }}</h6>
 
+<<<<<<< HEAD
     
+=======
+                                  
+>>>>>>> d48b96de8411e49d8584f65bef6cf4e144c300a1
                                     <h6 class="card-subtitle mb-2 text-muted" hidden="true" name="id"> {{ auth()->user()->id }}</h6>
                                     <?php $id_users = Auth::id(); ?>
                                     <a  href="{{route('home.editar', $id_users )}}" class="card-link">Editar datos</a>
@@ -41,9 +49,15 @@
                         </div>    
                     </div>   
                     </form>
+<<<<<<< HEAD
 
                         <div id="agenda"> 
                             
+=======
+                    </div> 
+
+                    <div id="agenda">    
+>>>>>>> d48b96de8411e49d8584f65bef6cf4e144c300a1
                         </div>
                     </div>
                 </div>
@@ -56,7 +70,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Personaliza dias</h5>
+                <h5 class="modal-title">Formulario de eventos</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -68,7 +82,11 @@
 
                 <div class="form-group" hidden="true">
                   <label for="id">id</label>
+<<<<<<< HEAD
                   <input type="text" class="form-control" name="id" id="id" aria-describedby="helpId" placeholder="" >
+=======
+                  <input type="text" class="form-control" name="id" id="id" aria-describedby="helpId" placeholder="">
+>>>>>>> d48b96de8411e49d8584f65bef6cf4e144c300a1
                   <small id="helpId" class="form-text text-muted">Help text</small>
                 </div>
 
@@ -97,6 +115,7 @@
                 </div>
 
                 <div class="form-group">
+<<<<<<< HEAD
                    <?php
                     $id_users = Auth::id();
                   ?>  
@@ -109,6 +128,12 @@
                   ?>  
                   <input type="text" class="form-control" name="id_cliente" id="id_cliente" aria-describedby="helpId" placeholder="" value="{{$id_cliente}}"  hidden="true">
                 </div>
+=======
+                  <?php $id_users = Auth::id(); ?>
+                  <input type="text" class="form-control" name="id_users" id="id_users" value="{{$id_users}}" aria-describedby="helpId" placeholder="" hidden="true">
+                </div>
+
+>>>>>>> d48b96de8411e49d8584f65bef6cf4e144c300a1
 
                 </form>
             </div>
@@ -124,5 +149,9 @@
     </div>
 </div>
 
+<<<<<<< HEAD
 <script src="{{ asset('js/agenda.js') }}" defer></script>
+=======
+
+>>>>>>> d48b96de8411e49d8584f65bef6cf4e144c300a1
 @endsection

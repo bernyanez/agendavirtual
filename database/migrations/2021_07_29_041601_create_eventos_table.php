@@ -26,6 +26,8 @@ class CreateEventosTable extends Migration
             $table->unsignedBigInteger("id_cliente");
             $table->foreign("id_cliente")->references('id')->on('cliente');
             $table->timestamps();
+            $table->unsignedBigInteger("id_users");
+            $table->foreign("id_users")->references("id")->on("users");
         });
     }
 

@@ -19,4 +19,8 @@ class BuscaServicioController extends Controller
     return view('user.index', compact('user'));
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> d48b96de8411e49d8584f65bef6cf4e144c300a1

@@ -6,7 +6,11 @@ use App\Models\Evento;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+<<<<<<< HEAD
 
+=======
+use Illuminate\Support\Facades\DB;
+>>>>>>> d48b96de8411e49d8584f65bef6cf4e144c300a1
 
 class EventoController extends Controller
 {
@@ -39,9 +43,15 @@ class EventoController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
         $id_users = Auth::id();
         $id_cliente = Auth::id();
         request()->validate(Evento::$rules); //validando info        
+=======
+        //
+        
+        request()->validate(Evento::$rules); //validando info
+>>>>>>> d48b96de8411e49d8584f65bef6cf4e144c300a1
         $evento=Evento::create($request->all()); //ORM que crea con todos los datos
     }
 
@@ -54,10 +64,30 @@ class EventoController extends Controller
 
 
     public function show(Evento $evento)
+<<<<<<< HEAD
     {      
         $userId= Auth::id();              
         $evento= Evento::where('id_users',$userId)->get();
+=======
+    {
+        //
+        $userId=Auth::id();
+        $evento= Evento::where('id_users',$userId)->get();
         return response()->json($evento);
+    
+    }
+
+
+    public function calendarioprofesional(Request $request, Evento $evento)
+    {
+        
+        $id_users=$request->get('id');
+        $evento= Evento::where('id_users',"3")->get();
+
+        //return view('calendarioprofesional', compact('evento'));
+>>>>>>> d48b96de8411e49d8584f65bef6cf4e144c300a1
+        return response()->json($evento);
+    
     }
 
 
